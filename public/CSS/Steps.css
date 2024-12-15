@@ -1,0 +1,197 @@
+*{
+    background-color:#e2f2ff; 
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    background-color: #fcfcfc;
+}
+
+.logo {
+    height: 70px;
+    width: 73px;
+    margin-right: 40%;
+    border-radius: 38px;
+}
+
+.contact-us, .login-button {
+    background: none;
+    border: none; 
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 3%;
+    cursor: pointer;
+}
+
+.Contact{
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+    
+}
+
+.login{
+    height: 20px;
+    width: 20px;
+    background-color: #fdfeff;
+}
+
+.help {
+    display: none;
+    padding: 0px; 
+    background-color: #C4D7FF;
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.contact-us{
+    position: relative;
+}
+
+.contact-us:hover .help{
+    display: inline-block;
+    width: 180px;
+    z-index: 10;
+}
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: rgb(2, 29, 49);
+}
+
+footer a {
+    color: #02192f;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #e5f0fd;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer .social-icons a:hover {
+    color: #d4e9ff;
+}
+
+.heading{
+    font-size: 50px;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.redd {
+    color: rgb(2, 29, 49);
+}
+
+.div-Stepp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.step-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+}
+  
+.Stepp {
+    height: 250px;
+    width: 250px;
+}
+  
+.div-Stepp span {
+    margin: 0 0px;
+    font-size: 24px;
+}
+  
+.div-Stepp p {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+    color: #1c164b;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+  
+.letsgo {
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid rgb(2, 29, 49);
+    background-color: rgb(26, 35, 161);
+    color: white;
+    font-size: 35px;
+    padding: 10px; 
+    padding-left: 35px;
+    padding-right: 35px;
+    text-align: center;
+}
+
+.time-calculator {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    /* background-color: white;  */
+    margin-right: 10px;
+}
+  
+.TimeHere {
+    font-size: 30px;
+    font-weight: bold;
+    color: rgb(57, 181, 253);
+    margin: 0 5px
+}
+  
+.semicolon {
+    font-size: 30px;
+    font-weight: normal;
+    margin: 0 5px;
+}
+
+h1.heading{
+    color:rgb(2, 29, 49);
+}
+  
+.contentt {
+
+    font-size: 15px;
+    font-weight: normal;
+    color: #08051f;
+    margin-left: 10px;
+}
+  
+  
+  

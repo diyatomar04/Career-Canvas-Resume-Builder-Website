@@ -1,0 +1,272 @@
+*{
+    background-color:#dfe9ffef;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.layout {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.logo {
+    height: 70px;
+    width: 73px;
+    margin-right: 40%;
+    border-radius: 38px;
+}
+
+.contact-us, .login-button {
+    background: none;
+    border: none; 
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 3%;
+    cursor: pointer;
+}
+
+.Contact{
+    height: 15px;
+    width: 15px;
+    background-color: #ffffff;
+    
+}
+
+.login{
+    height: 20px;
+    width: 20px;
+    background-color: #ffffff;
+}
+
+.help {
+    display: none;
+    padding: 0px; 
+    background-color: #fdfdfd;
+    border-radius: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+}
+
+.contact-us{
+    position: relative;
+}
+
+.contact-us:hover .help{
+    display: inline-block;
+    width: 180px;
+    z-index: 10;
+}
+
+.container {
+    display: flex;
+    margin-top: 2%;
+    height: 80vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.half {
+    flex: 1; 
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.left {
+    background-color: #f7f7ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;   
+    border: 2px solid rgb(30, 29, 29);
+}
+
+.right {
+    background-color: #f7f7ff;
+    border-top: 2px solid rgb(30, 29, 29);
+    border-right: 2px solid rgb(30, 29, 29);
+    border-bottom: 2px solid rgb(30, 29, 29);
+}
+
+.text1 , .text2{
+        align-items: center;
+        background-color: #f7f7ff;
+        justify-content: center;
+        text-align: center;
+}
+
+h1.text1{
+    margin-top: 30px;
+    font-weight: bold;
+    font-size: 35px;
+    margin: 20px;
+    color:#08051f;
+}
+
+h1.text2{
+    font-size: 20px;
+    margin-top: 10px;
+    margin: 20px;
+    color:#1a115e;
+}
+
+h3.text1{
+    font-size: 20px;
+    margin: left 15px;
+    margin-right:15px;
+    color:#08051f;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background-color: #f7f7ff;
+}
+
+.button-2   {
+    font-size: 25px;
+    font-family:Roboto  ;
+    background-color: rgb(12, 140, 244);
+    border-radius: 10px;
+    border:none;
+    width:250px;
+    height:60px;
+    font-weight: bold;
+    color: white;
+}
+
+.carousel-container {
+    background-color: rgb(15, 15, 129);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+}
+
+.carousel {
+    overflow: hidden;
+    width: 80%;
+    background-color: white;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+}
+
+.carousel-images img {
+    width: calc(100% / 5);
+    object-fit: cover;
+    border: 3px solid #000; /* Add a solid border */
+    height: 300px;
+    width: 250px;
+}
+
+.carousel-button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+.carousel-button.left {
+    left: 0;
+}
+
+.carousel-button.right {
+    right: 0;
+}
+
+
+.carousel-image{
+    margin-top: 5%;
+
+    margin-left: 7%;
+}
+
+.Container1{
+    background-color: rgb(15, 15, 129);
+    margin-top: 5%;
+    padding: 5%;
+}
+
+.Container1-text{
+    background-color: rgb(15, 15, 129);
+    margin-top: 3%;
+    text-align: center;
+    color: white;
+    margin-bottom: 3%;
+}
+
+h1.Container1-text{
+    font-size: 50px;    
+}
+
+footer {
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #333;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer .social-icons {
+    margin-top: 10px;
+}
+
+footer .social-icons a {
+    margin: 0 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+footer .social-icons a:hover {
+    color: #0056b3;
+}

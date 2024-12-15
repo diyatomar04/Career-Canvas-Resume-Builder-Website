@@ -1,0 +1,68 @@
+
+.container{
+    height:100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    }
+    
+    .login-container{
+    margin-top:60px;
+    margin-left:190px;
+    }
+    
+    #H1{
+    font-size: 50px;
+    }
+    
+    #H2{
+    font-weight:bold;
+    font-size:25px;
+    margin-top:-25px;
+    }
+    
+    .tab button{
+    background-color: white;
+    }
+    
+    .input{
+    margin-top: 40px;
+    font-size: 18px;
+    }
+    
+    input{
+    border-top: none;
+    border-left:none;
+    border-right:none;
+    margin-top:10px;
+    width:400px;
+    border-color: rgb(195, 198, 203);
+    outline: none;
+    }
+    
+    .input:hover{
+    color:rgb(72, 193, 245);
+    }
+    
+    input:hover{
+    border-color: rgb(72, 193, 245);
+    
+    }
+    
+    .submit{
+    margin-top:40px;
+    border-radius: 25px;
+    width:180px;
+    height:45px;
+    text-align: center;
+    margin-left:90px;
+    background-color: rgb(21, 23, 161);
+    color:white;
+    border: none;
+    font-size: 18px;
+    font-weight: bold;
+    }
+    
+    .submit:hover {
+    background-color:rgb(72, 193, 245);
+    }
+    
