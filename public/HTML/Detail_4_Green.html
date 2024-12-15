@@ -1,0 +1,694 @@
+<html>
+    <head>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <title>Header Page</title>
+
+        <style>
+            .mycontainer{
+                height:100%;
+                display: grid;
+                grid-template-columns: 18% 47% 35%;
+            }
+
+            form{
+                font-family:Arial, Helvetica, sans-serif;
+            }
+
+            #name, #contact, #place, #Education{
+                display:flex;
+                text-align:left;
+                font-size:12px;
+                margin-top: 20px;
+                font-size: 14px;
+                font-weight: 520;
+                border-color: rgba(30, 30, 30, 0.838);
+                font-weight: bold;
+            }
+
+            input{
+                width:270px;
+                height:35px;
+                border:solid 1px;
+                border-radius:5px;
+                border-color: rgba(80, 80, 80, 0.479);
+                background-color: rgba(227, 246, 255, 0.249);
+                color:rgb(6, 10, 12);
+                
+            }
+
+            select,option{
+                width:270px;
+                height:5000px;
+                border:solid 1px;
+                border-radius:5px;
+                border-color: rgba(80, 80, 80, 0.479);
+                background-color: rgba(227, 246, 255, 0.249);
+            }
+
+            button{
+                background-color: white;
+                color:rgb(3, 39, 93);
+                font-size: 25px;
+                font-weight: 550;
+                width:200px;
+                height:45px;
+                border:solid 2px;
+                border-radius:35px;
+                font-family:Arial, Helvetica, sans-serif;
+                margin-top:80px;
+            }
+
+            button:hover{
+              background-color: rgb(4, 132, 244);
+              color:white;
+            }
+            
+            .Resume-Template{
+                height: 100%;
+                display: grid;
+                /* grid-template-columns: 28% 0.5% 65%; */
+            }
+            .ABC{
+              border: 2px solid black;
+              height: 100%;
+            }
+
+            #Higher-Education,#Bachelors-Education,#Checking-Master,#Masters-Education,#Choose-Skills, #Choose-Skills1, #Choose-Skills2,#Choose-Skills3 {
+              width:270px;
+              height:32px;
+              font-size: 16px;
+              border:solid 1px;
+              border-radius:5px;
+              border-color: rgba(80, 80, 80, 0.479);
+              background-color: rgba(227, 246, 255, 0.249);
+            }
+            #Heading-Header:hover, #Heading-Education:hover, #Heading-Experience:hover, #Heading-Skills:hover, #Heading-Summary:hover {
+              cursor: pointer;
+            }
+
+            #Heading-Header, #Heading-Education, #Heading-Experience, #Heading-Skills, #Heading-Summary{
+              margin-bottom: 30px;
+            }
+
+            #More-Skills1,#Remove-Experience1, #Remove-Experience2{
+              margin-top: 2px;
+              background-color: white;
+                color:rgb(3, 39, 93);
+              font-size: 10px;
+              font-weight: 550;
+              width:100;
+              height:30px;
+              border:solid 1px;
+              border-radius:35px;
+              font-family:Arial, Helvetica, sans-serif;
+            }
+
+            #More-Skills1:hover,#Remove-Experience1:hover, #Remove-Experience2:hover{
+              background-color: rgb(4, 132, 244);
+              color:white;
+            }
+            #Container1 {
+              background-color: rgb(27, 15, 188);
+              color: white;
+              text-align: center;
+              transition: width 0.3s ease;
+            }
+            #ClicktoShort:hover{
+              cursor: pointer;
+            }
+            #Expand_Img{
+              height: 20px;
+              width: 20px;
+            }
+
+            #Container1{
+              background-color:rgb(3, 39, 93);
+              color:rgb(255, 255, 255);
+              font-size: 22px;
+              font-family: Cambria;
+            }
+
+           
+
+           
+        </style>
+    </head>
+    <body>
+        <div class="mycontainer" id="mycontainer">
+            <div id="Container1" style="text-align:center; height: 100%;">
+              <h2><span id="Career Canvas-Heading" style="font-size: 20px;">Career Canvas &nbsp; &nbsp;</span>  <span id="ClicktoShort" onclick="toggleContainer()"><img src="Images/OIP.png" alt="Expand" id="Expand_Img" height="20px" width="20px"></span></h2>
+              
+              <p id="Heading-Header" onclick="showHeader()">Header</p>
+              <p id="Heading-Education" onclick="ShowEducation()">Education</p>
+              <p id="Heading-Experience" onclick="ShowExperience()">Experience</p>
+              <p id="Heading-Skills" onclick="Showskills()">Skills</p>
+              <p id="Heading-Summary" onclick="ShowSummary()">Summary</p>
+              <!-- <p>OTHER SECTION</p> -->
+              <br>
+            </div>
+
+            <div style="text-align:center;" id="Forms-Resume">
+              <span id="Header-Span">
+                <H1 id="Heading1" style="color:rgb(3, 3, 41);font-size: 45px; margin-top: 80px; margin-left: -20px;">Let's start with your header!!</H1>
+                <form id="name">
+                  <p style="margin-left:60px;">
+                    <label for="fname">FIRST NAME</label><br>
+                    <input type="text" id="fname" name="fname" value="Karandeep" onfocus="clearValue(this,'Karandeep')" onblur="restoreValue(this, 'Karandeep')">
+                  </p>
+                  
+                  <p style="margin-left:60px;">
+                    <label for="mname">MIDDLE NAME</label><br>
+                    <input type="text" id="mname" name="mname" value="Singh" onfocus="clearValue(this,'Singh')" onblur="restoreValue(this, '')">
+                  </p>
+
+                      </form>
+
+                      <form id="name">
+
+                  <p style=" margin-left:60px;">   <label for="lname">LAST NAME</label><br>
+                    <input type="text" id="lname" name="lname" value="Ghai" onfocus="clearValue(this,'Ghai')" onblur="restoreValue(this, 'Ghai')"><br><br></p>
+
+                    <p style="margin-left:60px;">  <label for="city">CITY</label><br>
+                      <input type="text" id="city" name="city" value="Delhi" onfocus="clearValue(this,'Delhi')" onblur="restoreValue(this, 'Delhi')"></p>
+
+                </form>
+
+                <form id="place">
+                  <p style="margin-left:60px;">  <label for="address">ADDRESS</label><br>
+                    <input type="text" id="address" name="adress" value="E-1A,first floor Vijay Nagar Single Storey" onfocus="clearValue(this,'E-1A,first floor Vijay Nagar Single Storey')" onblur="restoreValue(this, 'E-1A,first floor Vijay Nagar Single Storey')"></p>
+
+  
+                    <p style=" margin-left:60px; width:130px">   <label for="country">COUNTRY</label><br>
+                      <input style="width:125px;" type="text" id="country" name="country" value="India" onfocus="clearValue(this,'India')" onblur="restoreValue(this, 'India')"><br><br></p>
+
+                    <p style=" margin-left:15px;">   <label for="pin">PIN CODE</label><br>
+                      <input style="width:125px;" type="text" id="pin" name="pin" value="110009" onfocus="clearValue(this,'110009')" onblur="restoreValue(this, '110009')"><br><br></p>
+  
+                  </form>
+
+                  <form id="contact">
+                    <p style="margin-left:60px;">  <label for="phone">PHONE</label><br>
+                      <input type="text" id="phone" name="phone" required value="9999585756" onfocus="clearValue(this,'9999585756')" onblur="restoreValue(this, '9999585756')"> </p>
+  
+                    <p style=" margin-left:60px;">   <label for="email">EMAIL</label><br>
+                      <input type="text" id="email" name="email" required value="Karan12@gmail.com" onfocus="clearValue(this,'Karan12@gmail.com')" onblur="restoreValue(this, 'Karan12@gmail.com')"></p>
+  
+                  </form>
+                  <button id="Header-Button" type="button" onclick="ShowEducation()">Continue</button>
+                </span>
+
+                  <span id="Education-Span">
+                    <H1 id="Heading2" style="font-size: 45px; margin-top: 80px; margin-left: -20px;">Write details about education!!</H1>
+                    <form id="Education">
+                      <p style="margin-left:60px;">  <label for="Percent_in_class_10">*School Name </label><br>
+                        <input type="text" id="SchoolName-10" name="SchoolName-10" value="Darshan Academy" onfocus="clearValue(this,'Darshan Academy')" onblur="restoreValue(this, 'Darshan Academy')"></p>
+
+                        <p style="margin-left:60px;">  <label for="Percent_in_class_10">*PERCENTAGE IN 10</label><br>
+                          <input type="text" id="PERCENT-10" name="PERCENT-10" value="92%"  onfocus="clearValue(this,'92')" onblur="restoreValue(this, '92')"></p>
+
+                        </form>
+
+                        <form id="Education">
+
+                          <p style="margin-left:60px;">  <label for="Percent_in_class_10">*School Name </label><br>
+                            <input type="text" id="SchoolName-12" name="PERCENT-10" value="Darshan Academy"  onfocus="clearValue(this,'Darshan Academy')" onblur="restoreValue(this, 'Darshan Academy')"></p>
+
+                            <p style="margin-left:60px;">  <label for="Percent_in_class_12">*PERCENTAGE IN 12</label><br>
+                              <input type="text" id="PERCENT-12" name="PERCENT-12" value="92%"  onfocus="clearValue(this,'92')" onblur="restoreValue(this, '92')"></p>
+    
+                            </form>
+        
+    
+                          <form id="name">
+
+                            
+                            <p style="margin-left:60px;">  <label for="CollegeName-Bachelors">College Name</label><br>
+                              <input type="text" id="CollegeName-Bachelors" name="CollegeName-Bachelors" value="UPES" onfocus="clearValue(this,'UPES')" onblur="restoreValue(this, 'UPES')"></p>
+
+                            <p style="font-size: 16px; margin-left: 60px;">
+                            <label for="Bachelors-Education">Choose a Degree:</label><br>
+                            <select id="Bachelors-Education">
+                                <option value="Bachelors in Computer Science Engineering">Bachelors in Computer Science Engineering</option>
+                                <option value="Bachelors in Information Technology">Bachelors in Information Technology</option>
+                                <option value="bachelors_ece">Bachelors in Electronics and Communication Engineering</option>
+                                <option value="bachelors_mechanical">Bachelors in Mechanical Engineering</option>
+                                <option value="bachelors_civil">Bachelors in Civil Engineering</option>
+                                <option value="bachelors_aerospace">Bachelors in Aerospace Engineering</option>
+                                <option value="bachelors_electrical">Bachelors in Electrical Engineering</option>
+                                <option value="bachelors_chemical">Bachelors in Chemical Engineering</option>
+                            </select></p>
+    
+                    </form>
+                    <form id="place">
+
+                        </form>
+                        <form id="name">
+
+                          <p style="margin-left:60px;">  <label for="CGPA-Bachelors">CGPA</label><br>
+                            <input type="text" id="CGPA-Bachelors" name="CGPA-Bachelors" value="8.69"  onfocus="clearValue(this,'8.69')" onblur="restoreValue(this, '8.69')"></p>
+
+
+                          <p style="font-size: 16px; margin-left: 60px;">
+                            <label for="Checking-Master">Have you done master's?</label><br>
+                            <select id="Checking-Master">
+                              <option value="No">No</option>
+                              <option value="Yes">Yes</option>
+                            </select></p>
+    
+      
+                      </form>
+
+                     
+                      <form id="name">
+
+                        <p style="margin-left:60px;">
+                          <label for="CGPA-masters">
+                            College Name
+                          </label><br>
+                          <input type="text" id="CollegeName-Masters" name="CollegeName-Masters" value="UPES"  onfocus="clearValue(this,'UPES')" onblur="restoreValue(this, 'UPES')"></p>
+  
+                        <p style="font-size: 16px; margin-left: 60px;">
+                          <label for="Masters-Education">Choose a Degree:</label><br>
+                          <select id="Masters-Education">
+                              <option value="Masters in Computer Science Engineering">Masters in Computer Science Engineering</option>
+                              <option value="Masters in Information Technology">Masters in Information Technology</option>
+                              <option value="Masters in Electronics and Communication Engineering">Masters in Electronics and Communication Engineering</option>
+                              <option value="Masters in Mechanical Engineering">Masters in Mechanical Engineering</option>
+                              <option value="masters_civil">Masters in Civil Engineering</option>
+                              <option value="masters_aerospace">Masters in Aerospace Engineering</option>
+                              <option value="masters_electrical">Masters in Electrical Engineering</option>
+                          </select></p>
+    
+                      </form>
+
+                      <form id="name">
+                      
+                        <p style="margin-left:60px;">  <label for="CGPA-masters">CGPA</label><br>
+                        <input type="text" id="CGPA-masters" name="CGPA-masters" value="8.69"  onfocus="clearValue(this,'8.69')" onblur="restoreValue(this, '8.69')"></p>
+      
+                      </form>
+                      <button id="Education-Button" type="button" onclick="ShowExperience()">Continue</button>
+                    </span>
+
+
+                    <span id="Experience-Span">
+                      <H1 id="Heading3" style="font-size: 45px; margin-top: 80px; margin-left: -20px;">Write about your experience!!</H1>
+                      <form id="Education">
+                        <p style="margin-left:60px;">  <label for="Jobtitle1">*Job-Title</label><br>
+                          <input type="text" id="Jobtitle1" name="Jobtitle1" value="Developer" onfocus="clearValue(this,'Developer')" onblur="restoreValue(this, 'Developer')"></p>
+      
+                          <p style="margin-left:60px;">  <label for="Employer1">*Employer</label><br>
+                            <input type="text" id="Employer1" name="Employer1" value="Amazon" onfocus="clearValue(this,'Amazon')" onblur="restoreValue(this, 'Amazon')"></p>
+  
+                          </form>
+      
+                            <form id="name">
+                              <p style="margin-left:60px;">
+                              <label for="date">Start Date:</label><br>
+                              <input type="date" id="Joining_date1" name="date" value="2023-02-01" onfocus="clearValue(this,'2023-02-01')" onblur="restoreValue(this, '2023-02-01')"></p>
+  
+                              <p style="margin-left:60px;">
+                                <label for="date">Last Date:</label><br>
+                                <input type="date" id="Leaving_date1" name="date" value="2024-10-01" onfocus="clearValue(this,'2024-10-01')" onblur="restoreValue(this, '2024-10-01')"></p>
+      
+                      </form>
+                      
+                          <form id="name">
+                            <p style="margin-left:60px;">  <label for="Jobtitle">*City</label><br>
+                              <input type="text" id="Job-Location-City" name="Jobtitle" value="Delhi" onfocus="clearValue(this,'Delhi')" onblur="restoreValue(this, 'Delhi')"></p>
+                            
+                              <p style="margin-left:60px;">  <label for="Jobtitle">*Country</label><br>
+                                <input type="text" id="Job-Location-Country" name="Jobtitle" value="India" onfocus="clearValue(this,'Country')" onblur="restoreValue(this, 'Country')"></p>
+                              </form>
+
+                              
+                                <div style="position: relative; display: inline-block;">
+                                  <textarea id="exp1" style="border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;" name="exp1" rows="9" cols="70">
+                                      -Developed a responsive web application using HTML, CSS, and JavaScript.
+                                      -Improved page load time by 20% through optimization techniques, enhancing user experience.
+                                      -Collaborated with designers to implement modern, user-centered design practices.
+                                  </textarea>
+                                  <button type="button" style="background-color:rgb(3, 39, 93); color:white; position: absolute; font-size:15px;width:200px; height:30px;text-align:center; top:20px;left: 180px;" onclick="rephraseContent()">AI Suggestion</button>
+                                </div><br>
+
+                                <textarea id="AI-Response1" style="margin-top:15px;border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;" name="AI-Response1" rows="9" cols="70">
+                                  <!-- AI response will appear here -->
+                                </textarea>
+                             
+                              
+                            
+
+                              <p id="DisplayEducation1" style="margin-left:60px;">Want to add more Experience?<button id="More-Skills1" type="button" style="margin-left: 10px;" onclick="ShowEducation1()">Click here</button></p>
+                              <p> <button id="Remove-Experience1" type="button" style="margin-left: 10px; display: none;" onclick="RemoveEducation1()"><img src="Images/OIP1.png" height="20px" width="20px"></button></p>
+                              <span id="ChooseEducation1" style="display: none;">
+                                <hr>
+                                <form id="Education">
+                                  
+                                <p style="margin-left:60px;">  <label for="Jobtitle2">*Job-Title</label><br>
+                                  <input type="text" id="Jobtitle2" name="Jobtitle2" value="Developer" onfocus="clearValue(this,'Developer')" onblur="restoreValue(this, 'Developer')"></p>
+              
+                                  <p style="margin-left:60px;">  <label for="Employer2">*Employer</label><br>
+                                    <input type="text" id="Employer2" name="Employer2" value="Amazon" onfocus="clearValue(this,'Amazon')" onblur="restoreValue(this, 'Amazon')"></p>
+          
+                                  </form>
+
+                                
+                                    <form id="name">
+                                      <p style="margin-left:60px;">
+                                      <label for="date">Start Date:</label><br>
+                                      <input type="date" id="Joining_date2" name="date" value="2023-02-01" onfocus="clearValue(this,'2023-02-01')" onblur="restoreValue(this, '2023-02-01')"></p>
+          
+                                      <p style="margin-left:60px;">
+                                        <label for="date">Last Date:</label><br>
+                                        <input type="date" id="Leaving_date2" name="date" value="2024-10-01" onfocus="clearValue(this,'2024-10-01')" onblur="restoreValue(this, '2024-10-01')"></p>
+              
+                              </form>
+                              
+                                  <form id="name">
+                                    <p style="margin-left:60px;">  <label for="Jobtitle">*City</label><br>
+                                      <input type="text" id="Job-Location-City2" name="Jobtitle" value="Delhi" onfocus="clearValue(this,'Delhi')" onblur="restoreValue(this, 'Delhi')"></p>
+                                    
+                                      <p style="margin-left:60px;">  <label for="Jobtitle">*Country</label><br>
+                                        <input type="text" id="Job-Location-Country2" name="Jobtitle" value="India" onfocus="clearValue(this,'Country')" onblur="restoreValue(this, 'Country')"></p>
+                                      </form>
+
+                                      <div style="position: relative; display: inline-block;">
+                                        <textarea id="exp2" style="border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="exp2" rows="9" cols="70">
+                                        -Developed a responsive web application using HTML, CSS, and JavaScript.
+                                        -Improved page load time by 20% through optimization techniques, enhancing user experience.
+                                        -Collaborated with designers to implement modern, user-centered design practices.
+                                        </textarea>
+                                        <button id="AiExp-Buton2" type="button" style="background-color:rgb(3, 39, 93); color:white; position: absolute; font-size:15px;width:200px; height:30px;text-align:center; top:20px;left: 180px;display: none;" onclick="rephraseContent2()">AI Suggestion</button>
+                                      </div><br>
+      
+                                      <textarea id="AI-Response2" style="margin-top:15px;border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;margin-left: 80px;" name="AI-Response3" rows="9" cols="70">
+                                        <!-- AI response will appear here -->
+                                      </textarea>
+                                    </span>
+
+                                    <p id="DisplayEducation2" style="margin-left:60px;display: none;">Want to add more Experience<button id="More-Skills1" type="button" style="margin-left: 10px;" onclick="ShowEducation2()">Click here</button></p>
+                                    <br>
+                                    <p> <button id="Remove-Experience2" type="button" style="margin-left: 10px; display: none;" onclick="RemoveEducation2()"><img src="Images/OIP1.png" height="20px" width="20px"></button></p>
+                                    <span id="ChooseEducation2" style="display: none;">
+                                      <hr>
+                                      <form id="Education">
+                                      <p style="margin-left:60px;">  <label for="Jobtitle3">*Job-Title</label><br>
+                                        <input type="text" id="Jobtitle3" name="Jobtitle3" value="Developer" onfocus="clearValue(this,'Developer')" onblur="restoreValue(this, 'Developer')"></p>
+                    
+                                        <p style="margin-left:60px;">  <label for="Employer3">*Employer</label><br>
+                                          <input type="text" id="Employer3" name="Employer3" value="Amazon" onfocus="clearValue(this,'Amazon')" onblur="restoreValue(this, 'Amazon')"></p>
+                
+                                        </form>
+                    
+                                          <form id="name">
+                                            <p style="margin-left:60px;">
+                                            <label for="date">Start Date:</label><br>
+                                            <input type="date" id="Joining_date3" name="date" value="2023-02-01" onfocus="clearValue(this,'2023-02-01')" onblur="restoreValue(this, '2023-02-01')"></p>
+                
+                                            <p style="margin-left:60px;">
+                                              <label for="date">Last Date:</label><br>
+                                              <input type="date" id="Leaving_date3" name="date" value="2024-10-01" onfocus="clearValue(this,'2024-10-01')" onblur="restoreValue(this, '2024-10-01')"></p>
+                    
+                                    </form>
+                                    
+                                        <form id="name">
+                                          <p style="margin-left:60px;">  <label for="Jobtitle">*City</label><br>
+                                            <input type="text" id="Job-Location-City3" name="Jobtitle" value="Delhi" onfocus="clearValue(this,'Delhi')" onblur="restoreValue(this, 'Delhi')"></p>
+                                          
+                                            <p style="margin-left:60px;">  <label for="Jobtitle">*Country</label><br>
+                                              <input type="text" id="Job-Location-Country3" name="Jobtitle" value="India" onfocus="clearValue(this,'Country')" onblur="restoreValue(this, 'Country')"></p>
+                                            </form>
+
+                                            <div style="position: relative; display: inline-block;">
+                                              <textarea id="exp3" style="border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="exp3" rows="9" cols="70">
+                                                -Developed a responsive web application using HTML, CSS, and JavaScript.
+                                                -Improved page load time by 20% through optimization techniques, enhancing user experience.
+                                                -Collaborated with designers to implement modern, user-centered design practices.
+                                              </textarea>
+                                              <button id="AiExp-Buton3" type="button" style="background-color:rgb(3, 39, 93); color:white; position: absolute; font-size:15px;width:200px; height:30px;text-align:center; top:20px;left: 180px;display: none;" onclick="rephraseContent3()">AI Suggestion</button>
+                                            </div><br>
+            
+                                            <textarea id="AI-Response3" style="margin-top:15px;border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;margin-left: 80px;" name="AI-Response3" rows="9" cols="70">
+                                              <!-- AI response will appear here -->
+                                            </textarea>
+                                          </span>
+                        <button id="Experience-Button" type="button" onclick="Showskills()">Continue</button>
+                      </span>
+
+
+                      <span id="Skills-Span">
+                        <H1 id="Heading4" style="font-size: 45px; margin-top: 80px; margin-left: -20px;">Add your skills!!</H1>
+        
+                              <form id="name">
+                                <p style="font-size: 16px; margin-left: 60px;">
+                                  <label for="Choose-Skills">Choose your skills:</label><br>
+                                  <select id="Choose-Skills">
+                                      <option value="active_listening">Active Listening</option>
+                                      <option value="team_leadership">Team Leadership</option>
+                                      <option value="marketing">Marketing</option>
+                                      <option value="development">Development</option>
+                                      <option value="network_security">Network Security</option>
+                                      <option value="devops">DevOps</option>
+                                      <option value="financial_analysis">Financial Analysis</option>
+                                      <option value="others">Others</option>
+                                  </select>
+                                </p>                                
+                        </form>
+                        
+
+                        <div style="position: relative; display: inline-block;">
+                          <textarea id="skill1" style="border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;" name="skill1" rows="9" cols="70">
+                   Add you skills here!
+                          </textarea>
+                          <button id="AISkill-Button1" type="button" style="background-color:rgb(3, 39, 93); color:white; position: absolute; font-size:15px;width:200px; height:30px;text-align:center; top:20px;left: 180px;display: none;" onclick="rephraseContentskill()">AI Suggestion</button>
+                        </div><br>
+
+                        <textarea id="AI-Response_skill" style="margin-top:15px;border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;" name="AI-Response_skill" rows="9" cols="70">
+                          <!-- AI response will appear here -->
+                        </textarea>
+
+                          <p id="DisplaySkills1" style="margin-left:60px;"><label>Want to add more Skills:</label><button id="More-Skills1" type="button" style="margin-left: 10px;" onclick="ShowSkills1()">Click here</button></p>
+                          <p> <button id="RemoveSkills1-Button" type="button" style="margin-left: 10px; display: none;" onclick="RemoveSkills1()"><img src="Images/OIP1.png" height="20px" width="20px"></button></p>
+                        <form id="name">
+                          <p id="ChooseSkills1" style="font-size: 16px; margin-left: 60px; display: none;">
+                            <label for="Choose-Skills1">Choose your skills:</label><br>
+                            <select id="Choose-Skills1">
+                                <option value="team_leadership">Team Leadership</option>
+                                <option value="active_listening">Active Listening</option>
+                                <option value="marketing">Marketing</option>
+                                <option value="development">Development</option>
+                                <option value="network_security">Network Security</option>
+                                <option value="devops">DevOps</option>
+                                <option value="financial_analysis">Financial Analysis</option>
+                                <option value="others">Others</option>
+                            </select>
+                          </p>                                
+                  </form>
+
+                  <div style="position: relative; display: inline-block;">
+                    <textarea id="skill2" style="border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="skill2" rows="9" cols="70">
+             Add you skills here!
+                    </textarea>
+                    <button id="AISkill-Button2" type="button" style="background-color:rgb(3, 39, 93); color:white; position: absolute; font-size:15px;width:200px; height:30px;text-align:center; top:20px;left: 180px;display: none;" onclick="rephraseContentskill2()">AI Suggestion</button>
+                  </div><br>
+
+                  <textarea id="AI-Response_skill2" style="margin-top:15px;border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="AI-Response_skill2" rows="9" cols="70">
+                    <!-- AI response will appear here -->
+                  </textarea>
+
+
+                  <p id="DisplaySkills2" style="margin-left:60px;display: none;">Want to add more Skills<button id="More-Skills1" type="button" style="margin-left: 10px;" onclick="ShowSkills2()">Click here</button></p>
+                  <p> <button id="RemoveSkills2-Button" type="button" style="margin-left: 10px; display: none;" onclick="RemoveSkills2()"><img src="Images/OIP1.png" height="20px" width="20px"></button></p>
+                  <form id="name">
+                    <p id="ChooseSkills2" style="font-size: 16px; margin-left: 60px; display: none;">
+                      <label for="Choose-Skills2">Choose your skills:</label><br>
+                      <select id="Choose-Skills2">
+                          <option value="marketing">Marketing</option>
+                          <option value="active_listening">Active Listening</option>
+                          <option value="team_leadership">Team Leadership</option>
+                          <option value="development">Development</option>
+                          <option value="network_security">Network Security</option>
+                          <option value="devops">DevOps</option>
+                          <option value="financial_analysis">Financial Analysis</option>
+                          <option value="others">Others</option>
+                      </select>
+                    </p>                                
+            </form>
+
+            <div style="position: relative; display: inline-block;">
+                          <textarea id="skill3" style="border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="skill3" rows="9" cols="70">
+                   Add you skills here!
+                          </textarea>
+                          <button id="AISkill-Button3" type="button" style="background-color:rgb(3, 39, 93); color:white; position: absolute; font-size:15px;width:200px; height:30px;text-align:center; top:20px;left: 180px;display: none;" onclick="rephraseContentskill3()">AI Suggestion</button>
+            </div><br>
+
+                  <textarea id="AI-Response_skill3" style="margin-top:15px;border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="AI-Response_skill3" rows="9" cols="70">
+                          <!-- AI response will appear here -->
+                  </textarea>
+
+                <p id="DisplaySkills3" style="margin-left:60px;display: none;">Want to add more Skills<button id="More-Skills1" type="button" style="margin-left: 10px;" onclick="ShowSkills3()">Click here</button></p>
+                <p> <button id="RemoveSkills3-Button" type="button" style="margin-left: 10px; display: none;" onclick="RemoveSkills3()"><img src="Images/OIP1.png" height="20px" width="20px"></button></p>
+                <form id="name">
+                  <p id="ChooseSkills3" style="font-size: 16px; margin-left: 60px; display: none;">
+                    <label for="Choose-Skills3">Choose your skills:</label><br>
+                    <select id="Choose-Skills3">
+                        <option value="development">Development</option>
+                        <option value="active_listening">Active Listening</option>
+                        <option value="team_leadership">Team Leadership</option>
+                        <option value="marketing">Marketing</option>
+                        <option value="network_security">Network Security</option>
+                        <option value="devops">DevOps</option>
+                        <option value="financial_analysis">Financial Analysis</option>
+                        <option value="others">Others</option>
+                    </select>
+                  </p>                                
+          </form>
+
+          <div style="position: relative; display: inline-block;">
+            <textarea id="skill4" style="border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="skill4" rows="9" cols="70">
+     Add you skills here!
+            </textarea>
+            <button id="AISkill-Button4" type="button" style="background-color:rgb(3, 39, 93); color:white; position: absolute; font-size:15px;width:200px; height:30px;text-align:center; top:20px;left: 180px;display: none;" onclick="rephraseContentskill4()">AI Suggestion</button>
+          </div><br>
+
+          <textarea id="AI-Response_skill4" style="margin-top:15px;border: solid 1px rgba(103, 102, 102, 0.479) ; border-radius:2px;font-family:'Times New Roman', Times, serif; background-color:rgba(227, 246, 255, 0.249); padding-right: 60px;display: none;" name="AI-Response_skill4" rows="9" cols="70">
+            <!-- AI response will appear here -->
+          </textarea>
+                        
+                          <button id="Skills-Button" type="button" onclick="ShowSummary()">Continue</button>
+                        </span>
+
+                        <button id="Summary-Button" type="button" onclick="InsertValueInSQL(); showOnlyResume()" style="display: none;">Submit</button>    
+
+                  
+            </div>
+            <div id="Karan" style="background-color: #f4f4f4; font-family: 'Arial', sans-serif; padding: 20px; border: 1px solid #ddd; border-radius: 10px; height:725px">
+                <header style="text-align: left; padding: 10px; background-color: #0b4808; color: white; border-radius: 10px 10px 0 0;">
+                  <h1 style=" font-size: 28px; margin: 0;" class="Resume-Name">
+                    <span id="Resume-FName">Asd</span>
+                    <span id="Resume-MName" style="display: none;">&nbsp;</span>
+                    <span id="Resume-LName">Asd</span>
+                  </h1>
+                  <p style="font-size: 14px; margin: 5px 0;">
+                    <span id="Resume-Email">ABC@gmail.com</span> | 
+                    <span id="Resume-Phone">999xxxxxxx</span> | 
+                    <span id="Resume-Address">ASdx</span>,
+                    <span id="Resume-City">XYZ</span>, 
+                    <span id="Resume-Country">QWERTY</span>, 
+                    <span id="Resume-Pincode">121</span>
+                  </p>
+                </header>
+              
+                <section style="margin-top: 20px;">
+                  <h2 style="color: #0b4808;font-size: 22px; margin-bottom: 10px;">Skills</h2>
+                  <ul style="list-style-type: square; padding-left: 20px; font-size: 14px;">
+                    <li id="Info_Skill1">Active Listening: Skilled in understanding client needs and improving team communication.</li>
+                    <li id="Info_Skill2">Team Leadership: Proven ability to lead cross-functional teams toward project goals.</li>
+                    <li id="Info_Skill3">Development: Proficient in programming languages like HTML, CSS, and JavaScript.</li>
+                    <li id="Info_Skill4">DevOps: Familiar with CI/CD pipelines, containerization, and cloud deployment.</li>
+                  </ul>
+                </section>
+              
+                <section style="margin-top: 20px;">
+                  <h2 style="font-size: 22px; color: #0b4808; margin-bottom: 10px;">Education</h2>
+                  <p style="font-size: 14px;">
+                    <span id="Resume_Masters-Space" style="display: none;">
+                      <span id="Resume-Masters-Degree"></span>,&nbsp;
+                      <span id="Resume-CollegeName-Masters"></span>&nbsp;&nbsp;
+                      <span id="Resume-CGPA-Masters">85%</span><br>
+                    </span>
+                    <strong>Bachelor's Degree:</strong> 
+                    <span id="Resume-Bachelors-Degree">College</span>, 
+                    <span id="Resume-CollegeName-Bachelors">College Name</span> 
+                    <span id="Resume-CGPA-Bachelors">(85%)</span><br>
+                    <strong>Class 12:</strong> 
+                    <span id="Resume-SchoolName-12">School Name</span> 
+                    <span id="Resume-Percent12">(85%)</span><br>
+                    <strong>Class 10:</strong> 
+                    <span id="Resume-SchoolName-10">School Name</span> 
+                    <span id="Resume-Percent10">(85%)</span>
+                  </p>
+                </section>
+              
+                <section style="margin-top: 20px;">
+                  <h2 style="font-size: 22px; color: #0b4808; margin-bottom: 10px;">Experience</h2>
+                  <div id="Experience1" style="margin-bottom: 15px;">
+                    <h3 style="font-size: 18px; margin: 5px 0;">
+                      <span id="Resume-Jobtitle1">Frontend Developer</span>
+                    </h3>
+                    <p style="font-size: 14px; margin: 5px 0;">
+                      <span id="Resume-Employer1">FarmTech Solutions</span> | 
+                      <span id="Resume-Joining_date1">Oct 2023</span> - 
+                      <span id="Resume-Leaving_date1">Feb 2024</span>
+                    </p>
+                    <ul id="Info-Experience1" style="list-style-type: circle; padding-left: 20px; font-size: 14px;">
+                      <li>Developed a responsive web application using HTML, CSS, and JavaScript.</li>
+                      <li>Improved page load time by 20% through optimization techniques, enhancing user experience.</li>
+                      <li>Collaborated with designers to implement modern, user-centered design practices.</li>
+                    </ul>
+                  </div>
+                  <span id="Experience2" style="display: none;">
+                    <span id="Resume-Jobtitle2">Frontend Developer</span><br>
+                    <span id="Resume-Employer2">FarmTech Solutions</span> | <span id="Resume-Joining_date2"> Oct 2023 </span> - <span id="Resume-Leaving_date2">Feb 2024 </span><br>
+                    <ul id="Info-Experience2">
+                      <li>Developed a responsive web application using HTML, CSS, and JavaScript.</li>
+                      <li>Improved page load time by 20% through optimization techniques, enhancing user experience.</li>
+                      <li>Collaborated with designers to implement modern, user-centered design practices.</li>
+                    </ul>
+                  </span>
+                  <span id="Experience3" style="display: none;">
+                    <span id="Resume-Jobtitle3">Frontend Developer</span><br>
+                    <span id="Resume-Employer3">FarmTech Solutions</span> | <span id="Resume-Joining_date3"> Oct 2023 </span> - <span id="Resume-Leaving_date3">Feb 2024 </span><br>
+                    <ul id="Info-Experience3">
+                      <li>Developed a responsive web application using HTML, CSS, and JavaScript.</li>
+                      <li>Improved page load time by 20% through optimization techniques, enhancing user experience.</li>
+                      <li>Collaborated with designers to implement modern, user-centered design practices.</li>
+                    </ul>
+                  </span>
+                </section>
+              </div>
+              
+        <button id="generate-pdf" onclick="generatePDF()" style="display: none;">Download as PDF</button>
+          <script>
+              async function generatePDF() 
+              {
+                  const { jsPDF } = window.jspdf;
+                  const pdf = new jsPDF();
+
+                  const content = document.getElementById("Karan");
+                  
+                  // Store original dimensions
+                  const originalWidth = content.offsetWidth;
+                  const originalHeight = content.offsetHeight;
+
+                  // Set temporary dimensions for A4 page
+                  content.style.width = "540px";
+                  content.style.height = "780px"; // Adjust height automatically based on content width
+
+                  try {
+                      // Generate the PDF and wait for completion
+                      await pdf.html(content, {
+                          callback: function (doc) {
+                              doc.save("example.pdf");
+                          },
+                          x: 0, // Add left margin
+                          y: 0, // Add top margin
+                          html2canvas: {
+                              scale: 0.36, // Adjust scaling for better quality
+                              windowWidth: document.body.scrollWidth // Simulated viewport width
+                          }
+                      });
+                  } catch (error) {
+                      console.error("Error rendering PDF:", error);
+                  } finally {
+                      // Reset the dimensions after PDF generation is complete
+                      content.style.width = `${originalWidth}px`;
+                      content.style.height = `${originalHeight}px`;
+                  }
+              }
+
+        </script>
+        <script src="JavaScript/Detail_1.js"></script>
+    </body>
+</html>

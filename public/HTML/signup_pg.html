@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+           <title>Career canvas Login Page</title> 
+        <link rel="stylesheet" href="/CSS/signup.css"> 
+           
+</head>
+        <body>
+          <!--  <div class="heading">
+            <pre><a href="Home.html" class="home"> Home Page</a></pre>
+            <h1> Career Canvas</h1> 
+            </div> -->
+
+        <div class="container" >
+            <div class="login-container" >
+            
+            
+            <div class="login-heading" >
+            <p id="H1">Ready to start your success story?</p></h2>
+            <p id="H2">Signup to Career Canvas</p>
+            </div>
+
+            
+
+            
+<!-- here the code for create account starts-->
+
+            <form id="registertab" class="form" id="F2" method="post" action="/signup_pg">
+
+                <div class="input">
+                    <label for="fname">Full Name</label><br>
+                    <input type="text" id="fname" name="fname" required>
+                </div>
+     
+
+                <div class="input">
+                    <label for="email">E-mail Address</label><br>
+                    <input type="email" id="email" name="email" required>   
+                </div>
+
+                <div class="input">
+                    <label class="password">Password</label><br>
+                    <input type="password" id="password" name="password" required>
+                </div>
+
+                <div class="input">
+                    <label class="c_password">Confirm Password</label><br>
+                    <input type="password" id="c_password" name="c_password" required>
+                </div>
+
+            
+                
+                <button type="submit" class="submit">Sign up</button>    
+               
+            </form>
+
+            <div class="signup-container">
+                <br><p id="H3">Already have an account?</p>
+                <button onclick="openloginpg()" class="tab active" id="logintab">Login</button>
+            </div>
+            </div>
+
+            <div class="image" style="margin-top:25px;"><img src="/Images/signup_img.avif"></div>
+        </div>
+
+        
+        <script src="/JavaScript/signup.js"></script>
+        
+        </body>
+    </html>

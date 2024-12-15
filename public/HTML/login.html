@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" contend="width=device-width, initial-scale=1.0">
+           <title>Career Canvas Login Page</title> 
+           <link rel="stylesheet" href="/CSS/login.css"> 
+        </head>
+        <body>
+           <!-- <div class="heading">
+            <pre><a href="Home.html" class="home"> Home Page</a>        <a href="#" class="services">Services</a> </pre>
+            <h1> Career Canvas</h1> 
+            </div>-->
+
+        <div class="container">
+            <div class="login-container">
+            
+            <div class="login-heading">
+            <p id="H1">Welcome Back</p></h2>
+            <p id="H2">Please enter your details </p>
+            </div>
+            <!--Login Form starting-->
+
+            <form id="loginform" class="form active" method="post" action="/login">
+            <div class="input">
+            <label for="email">E-mail Address</label><br>
+            <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input">
+                <label class="password">Password</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+           <!-- <div class="remeber">
+                <label class="checkbox-container">Remember Me
+                <input type="checkbox">
+                </label>
+                <a href='#' class="forgot">Forgot Password?</a>
+            </div> -->
+              <br>
+            <button type="submit" onclick="opendetailpg()" class="submit">LOGIN</button>
+            </form>
+
+
+            </div>
+
+            <div class="image" style="margin-top:20px"><img src="/Images/login_img.avif"></div>
+        </div>
+
+        <script src="/JavaScript/login.js">
+        </script>
+        </body>
+    </html>
+
